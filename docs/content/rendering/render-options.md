@@ -50,7 +50,7 @@
 - `setTexturingState`: テクスチャの準備の指定
 - `setWriteMaskState`: 書き込むバッファのマスク設定(カラーバッファや深度バッファ)
 - `setLineState`: 線の太さを指定
-- `setColorLogicState`: 色調整ののモードを指定
+- `setColorLogicState`: 色調整のモードを指定
 - `createCompositeState`: 設定をビルドする
 
 バニラのRenderTypeの例
@@ -118,7 +118,7 @@ GPUに送る情報のレイアウトを決定するためのフォーマット�
 
 ## ブレンドモード
 
-ブレンドモードとは、透明度によってどのように描画色を決定するかの設定の事です。
+ブレンドモードとは、透明度によってどのように描画色を決定するかの設定のことです。
 
 `RenderStateShard` の中の定数としていくつか存在する。
 

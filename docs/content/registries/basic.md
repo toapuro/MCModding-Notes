@@ -2,7 +2,7 @@
 
 レジストリとは、ID (`ResourceLocation`) とオブジェクト（アイテムやブロックなど）を紐づけて管理する仕組みです。
 
-登録されたオブジェクトをレジストリと呼び分けるため、**レジストリエントリ**と呼称します。
+登録対象のオブジェクトとレジストリを区別するため、**レジストリエントリ**と呼称します。
 
 レジストリエントリのIDは、同じレジストリの中では**一意**である必要があります。
 
@@ -22,7 +22,7 @@ public class ModItems {
 public class ExampleMod {
     public static final String MODID = "examplemod";
     
-    // Neoforge / 1.20.1 Forge (3.10以降) (1)
+    // NeoForge / 1.20.1 Forge (47.3.10以降) (1)
     public ExampleMod(FMLJavaModLoadingContext context) {
         IEventBus modBus = context.getModEventBus();
 
@@ -30,7 +30,7 @@ public class ExampleMod {
         ModItems.ITEMS.register(modBus);
     }
     
-    // else
+    // その他
     @SuppressWarnings("removal")
     public ExampleMod() {
         this(FMLJavaModLoadingContext.get());
@@ -85,7 +85,7 @@ public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_
 
 !!! danger
 
-    実際の登録前に中身にアクセスすると例外が発生するため注意です。
+    実際の登録前に中身へアクセスすると例外が発生するため、注意してください。
     
     例外: `Registry Object not present: ...`
 

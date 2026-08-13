@@ -21,7 +21,7 @@ Minecraft の Mod は通常、難読化されています。
 
 開発環境でこれらを扱うために、ForgeGradle は `fg.deobf` という特別なメソッドを提供しています。
 
-これを依存関係の宣言時に噛ませることで、指定した Jar ファイルを開発環境のマッピングに合わせて再マッピングして読み込んでくれます。
+これを依存関係の宣言時に適用することで、指定した Jar ファイルを開発環境のマッピングに合わせて再マッピングして読み込んでくれます。
 
 ```gradle title="build.gradle"
 dependencies {
@@ -51,9 +51,9 @@ dependencies {
     ```
     !!! info
 
-        content指定はなくても良いですが、Cursemavenへの無駄なリクエストを減らすことができます。
+        content の指定は必須ではありませんが、CurseMaven への無駄なリクエストを減らせます。
 
-3.  **依存関係の記述**
+2.  **依存関係の記述**
     フォーマット: `curse.maven:<description>-<projectID>:<fileID>`
     *   **description**: 任意の識別用文字列（実際の解決には使われません）
     *   **projectID**: CurseForge プロジェクト ID (About Project 欄などに記載)
@@ -69,7 +69,7 @@ dependencies {
 
     以上のように記述できますが、手間がかかります。
 
-    Curseforgeでファイルを開くと、`Curse Maven Snippet`という欄に依存関係として使用する記述があります。(例: [JEI](https://www.curseforge.com/minecraft/mc-mods/jei/files/7391695))
+    CurseForgeでファイルを開くと、`Curse Maven Snippet` という欄に依存関係として使える記載があります。(例: [JEI](https://www.curseforge.com/minecraft/mc-mods/jei/files/7391695))
 
     これをそのままコピーすると楽です。
 

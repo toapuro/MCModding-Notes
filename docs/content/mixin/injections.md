@@ -2,13 +2,13 @@
 
 ## インジェクション
 
-まずどこにコードを注入するか、どこのコードを改変するかを指定するための@Atを解説します
+まず、どこにコードを注入するか、どこのコードを改変するかを指定するための @At を解説します。
 
 ### @At
 
 `@At` はどこにコードを注入するかを指定します。
 
-`@At("HEAD")`のように使用します
+`@At("HEAD")` のように使用します。
 
 #### 引数
 
@@ -44,7 +44,7 @@
 
 !!! info
 
-    IntellijのMinecraft Developmentプラグインが補完してくれるので、
+    IntelliJのMinecraft Developmentプラグインが補完してくれるので、
     すぐ覚える必要はないです。
 
 ??? デスクリプタの解説
@@ -58,7 +58,7 @@
 
     このようなフォーマットで記述します。
 
-    例えばオブジェクトであれば以下の様に記述します
+    例えばオブジェクトであれば以下のように記述します。
 
     `Ljava/lang/Object;`
 
@@ -77,7 +77,7 @@
 
     `Lio/github/toapuro/example/Example;add(II)I`
 
-    この様に対応します。
+    このように対応します。
 
     ```java
     package io.github.toapuro.example;
@@ -92,7 +92,7 @@
 
     `Lio/github/toapuro/example/Example;concat(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;`
     
-    この様に対応します。
+    このように対応します。
 
     なんとなくイメージできたかと思います。
 
@@ -120,9 +120,9 @@
 
 このように使用します
 
-これもまたIntellijのMinecraft Developmentプラグインが補完してくれます。
+これもまたIntelliJのMinecraft Developmentプラグインが補完してくれます。
 
-??? フィールドのデクスリプタ指定
+??? フィールドのデスクリプタ指定
 
     フォーマットは以下の通りです。
 
@@ -240,7 +240,7 @@
 
 #### @Redirect
 
-対象を丸々置き換える。
+対象の処理を完全に置き換えます。
 
 !!! warning
     特にMixinが被った場合、競合しクラッシュするので使用は控えましょう。
@@ -280,7 +280,7 @@
 
 #### @Overwrite
 
-メソッドをすべて置き換え。
+メソッドの実装をすべて置き換えます。
 
 !!! danger
     互換性が無くなるので、他Modを一切考慮しない場合のみ使用してください。

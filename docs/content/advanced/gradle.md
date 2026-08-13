@@ -15,7 +15,7 @@ Groovyもプログラミング言語であるので、一つ一つ見ていく�
 ```gradle title="build.gradle"
 plugins {
     id 'eclipse' // Eclipse IDE
-    id 'idea' // Intellij IDEA
+    id 'idea' // IntelliJ IDEA
     id 'maven-publish' // Maven公開用
     id 'net.minecraftforge.gradle' version '[6.0,6.2)' // ForgeGradle
 }
@@ -26,7 +26,7 @@ Gradle プラグインという、Gradle を拡張するツールを記述する
 
 例えば ForgeGradle では
 
-- Minecaft のソースコードのダウンロード
+- Minecraft のソースコードのダウンロード
 - 難読化の解除(リマップ)
 - 開発用クライアントの起動設定
 
@@ -40,7 +40,7 @@ minecraft {
 ここは開発環境のマッピングを指定しています。
 [#マッピング](./mapping.md)で解説していますが、
 
-クラス名やメソッド名、フィールド名等を読みやすくするための物です。
+クラス名やメソッド名、フィールド名等を読みやすくするためのものです。
 
 ### 開発環境でのマイクラの設定
 

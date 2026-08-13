@@ -10,3 +10,4 @@ docs/all.txt
 .idea/
 *.swp
 *.swo
+.history/

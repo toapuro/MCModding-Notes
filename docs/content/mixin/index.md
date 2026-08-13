@@ -74,7 +74,7 @@ dependencies {
 }
 ```
 
-以下を`src/main/resources/<modid>.mixins.json`に
+以下を `src/main/resources/<modid>.mixins.json` に追加します。
 ```json title="<modid>.mixins.json"
 {
   "required": true,
@@ -102,7 +102,7 @@ mixin {
     config "${mod_id}.mixins.json"
 }
 ```
-`${mod_id}`はそのままで大丈夫です
+`${mod_id}` はそのまま使用できます。
 
 ## Mixinの使い方
 
@@ -141,7 +141,7 @@ public class ExampleMixin {
 }
 ```
 
-この例では以下のようになります
+この例では以下のようになります。
 ```json title="<modid>.mixins.json"
 {
     "package": "io.github.toapuro.example.mixins",
