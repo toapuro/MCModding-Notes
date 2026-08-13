@@ -1,9 +1,10 @@
 # 環境構築
 
-## Intellijのセットアップ
+Mod を開発するにはまずは開発環境の構築が必要です。
 
-!!! info "エディタについて"
-    Eclipse IDE や VSCode でも開発できますが、この章では触れません。
+プラグインや開発サポートが豊富なため、ここでは開発ツール(IDE)は Intellij を使用します。
+
+## Intellijのセットアップ
 
 1. **Intellij IDEAのインストール**
     
@@ -11,7 +12,7 @@
 
 2. **日本語化 (任意)**
     
-    Intellijを起動してランチャーメニューになったら、サイドバーのPluginsタブから {==Japanese Language Pack==} と検索してインストールします。
+    Intellijを起動してランチャーメニューが表示されたら、サイドバーのPluginsタブから {==Japanese Language Pack==} と検索してインストールします。
     インストール後に Intellij を再起動すれば日本語化が反映されます。
     ![](../../assets/intellij/intellij-japanese-ext.png)
 
@@ -22,7 +23,7 @@
 
 ## 前提知識
 
-スキップしても大丈夫ですが、迷ったときに軽く振り返ってもらえると理解しやすくなります
+スキップしても大丈夫ですが、迷ったときに軽く振り返ると理解しやすくなります
 
 | 用語 | 備考 |
 | --- | --- |
@@ -33,11 +34,11 @@
 | Artifact ID | 基本的にModのIDを書いておく |
 | Class | Java でコードを書く基本単位。1クラス1ファイルで機能ごとに分割できる |
 
-**Modローダー**
+**Modローダーの選択**
 
 | プラットフォーム | 備考 |
 | --- | --- |
-| NeoForge | 1.20.4 以降はこちら。1.20.4 以降のバージョンを開発する、ほとんどの開発者が移行済み。 |
+| NeoForge | 1.20.4 以降はこちら。1.20.4 以降のバージョンを開発するほとんどの開発者が移行済み。 |
 | Forge | 1.20.4 未満ならこちら |
 
 1.20.1は特別にNeoForgeとForgeどちらも対応しています
@@ -46,29 +47,24 @@
 
 いくつか方法があります
 
-NeoForgeであれば [1, (NeoForge/Fabric) Mod ジェネレータの利用](#1-neoforgefabric-mod-ジェネレータの利用) を推奨
+NeoForgeであれば [1, (NeoForge) Mod ジェネレータの利用](#1-neoforge-mod-ジェネレータの利用) を推奨
 
-Fabricであれば [1, (NeoForge/Fabric) Mod ジェネレータの利用](#1-neoforgefabric-mod-ジェネレータの利用) を推奨
+Forgeであれば [4, (NeoForge/Forge) Intellijプラグイン経由で生成](#4-neoforgeforgefabric-intellijプラグイン経由で生成) を推奨
 
-Forgeであれば [4, (NeoForge/Forge/Fabric) Intellijプラグイン経由で生成](#4-neoforgeforgefabric-intellijプラグイン経由で生成) を推奨
-
-### 1, (NeoForge/Fabric) Mod ジェネレータの利用
+### 1, (NeoForge) Mod ジェネレータの利用
 
 NeoForge (1.20.4 以降)  
 [NeoForge Mod Generator](https://neoforged.net/mod-generator/)
 
-Fabricならこちら  
-[Fabric Template](https://fabricmc.net/develop/template/)
+### 2, (NeoForge) MDKをダウンロード
 
-### 2, (NeoForge) テンプレートをクローン
-
-[NeoForge テンプレート一覧](https://github.com/orgs/NeoForgeMDKs/repositories)
+[NeoForge MDK一覧](https://github.com/orgs/NeoForgeMDKs/repositories)
 
 ここにあるリポジトリの中から対象のバージョンを探して、
 右上の Code->Download ZIP からダウンロード・解凍し、build.gradle を開けば IDE が立ち上がるはずです。
 
 !!! tip
-    `git clone --depth 1 https://github.com/~~` でクローンしても大丈夫です(depth=1 は不要なコミットを省くため)。
+    `git clone --depth 1 https://github.com/~~` でクローンしても構いません(depth=1 は余分なコミット履歴を省くため)。
 
 ### 3, (Forge) Forge MDK[^1]の利用
 
@@ -77,11 +73,11 @@ Fabricならこちら
 こちらからバージョンを選択して MDK をダウンロードし解凍、build.gradle を開きます。
 
 !!! tip
-    LatestとRecommendedの違いは基本的にあまりありません。どちらでもよし。
+    Latest と Recommended の違いは基本的にありませんが、後者をお勧めします。
 
 [^1]: MDKはMod Developer Kitの略で、いわゆるテンプレートです。
 
-### 4, (NeoForge/Forge/Fabric) Intellijプラグイン経由で生成
+### 4, (NeoForge/Forge) Intellijプラグイン経由で生成
 
 プロジェクトを新規作成するとき左下にあるジェネレータから Minecraft を選択し、各項目を入力して作成を押してください。
 
@@ -90,9 +86,9 @@ Fabricならこちら
 
 ## Java JDK(Intellij IDE)
 
-JDK は Java を実行するためのキットのようなもの、と捉えてもらえればOKです。
+JDK は Java を実行するためのキットのようなもの、と理解してもらえばOKです。
 
-以下のテーブルのように、マイクラバージョンごとに JDK が異なり、基本的に開発環境もこれに合わせます。
+以下のテーブルのように、マイクラバージョンごとに使用するJDKバージョンが異なり、基本的に開発環境も対応するJDKに合わせます。
 
 | MC バージョン | JDK バージョン |
 | ------------- | -------------- |
@@ -105,47 +101,45 @@ JDK は Java を実行するためのキットのようなもの、と捉えて�
 
 ### ダウンロード
 
-Intellij であれば、左上の ≡ メニュー->ファイル->プロジェクト構成->プロジェクトと進み、SDK[^2]を指定できると思いますが、そこで{==JDKのダウンロード...==}を選択することでダウンロードできます。
+Intellij であれば、プロジェクトを開いた状態で左上の ≡ メニュー->ファイル->プロジェクト構成->プロジェクトと進み、SDK[^2]の指定を開き、{==JDKのダウンロード...==}を選択することでダウンロードできます。
 
 ![JDKのダウンロード](../../assets/intellij/jdk-download.png)
 
-バージョンは先程のテーブルを参考に設定してください。
+JDKバージョンは先程のテーブルを参考に設定してください。
 
 ベンダー[^3]の選択ができると思いますが、特にこだわりがなければ {==JetBrains Runtime==} がおすすめです。
 
 !!! info
-    Jetbrains Runtime ではホットスワップという、実行中にコードを変更して適用させられる機能が使えます。
+    Jetbrains Runtime ではホットスワップという、実行中にコードを変更して反映させることができる機能が使えます。
 
-また、デスクトップにJDKをいれておいても損はないです。
-面倒くさかったら必要になったときにダウンロードしておきましょう。
-
-少ないですがいくつかベンダーを紹介しておきます。
+IDE外にも導入しておきたいのであれば以下のベンダーからダウンロードすることをお勧めします。
 
 - [Adoptium](https://adoptium.net/temurin/releases)
 
 - [OpenJDK](https://jdk.java.net/25/)
 
-[^2]: JavaではJDKのこと
-[^3]: Java関連のベースキットを提供する企業やサービス
+[^2]: JavaではJDKの事を指す
+[^3]: Java関連のベースキット(JDK等)を提供する企業やサービス
 
 ## テンプレートの編集
 
-ジェネレータや、プラグインから生成した場合でも変更する箇所があります。
+MDKから生成した場合は適切な値へ変更する箇所がいくつかあります。
 
-`gradle.properties` に `mod_id` や、 `mod_name` 等がテンプレートのままなので、それを適切な値に変更してください
-
-`src/main/java`の下にある`*Mod.java`も同様に `MODID` を変更してください。
+- `gradle.properties` の `mod_id` や `mod_name` 等のプロパティ
+- `src/main/java` 以下のパッケージ
+- `src/main/java` 以下の `*Mod.java` の `MODID` やクラス名
+- `src/main/resources/*.mixins.json` のファイル名や `"package"`, `"refmap"`
 
 以下例
-```gradle
+```gradle title="gradle.properties"
 minecraft_version_range=[1.20.1] // 単一バージョンのみ対応の場合[バージョン]のように記述
 ...
-mod_id=modding_example // Mod ID
-mod_name=ModdingExample // Mod名
+mod_id=example_mod // Mod ID
+mod_name=ExampleMod // Mod名
 mod_license=MIT // 好きなライセンスを指定
 mod_group_id=dev.toapuro // グループID。#前提知識を参照
 mod_authors=toapuro, another_author // 作者一覧
-mod_description=A example mod // Modの説明
+mod_description=An example mod // Modの説明
 ```
 
 分からない用語は [#前提知識](#前提知識) を参照してください
@@ -156,10 +150,12 @@ mod_description=A example mod // Modの説明
 
 ![](../../assets/intellij/gradle.png)
 
-`build.gradle`を変更した場合、サイドバーの左上にループするようなアイコンがあるので、それを押すと変更が適用されます。
+jarへビルドする場合は `Tasks->build->build`、
 
-jarへビルドする場合は `Tasks->build->build`
+開発環境で実際に動作を確認したいのであれば `Tasks->forgegradle runs->runClient` を実行。
 
-開発環境で実際に動作を確認したいのであれば `Tasks->forgegradle runs->runClient` にあるかと思います。
+!!! tips
+
+    `build.gradle` を変更した場合には、サイドバーの左上にループのようなアイコンをクリックすることで、変更を適用することができます。
 
 初心者向けの解説は一旦ここまでです。
