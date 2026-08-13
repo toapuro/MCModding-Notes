@@ -168,7 +168,7 @@ public static void drawLine(
 
 - [Minecraft Wiki](https://ja.minecraft.wiki/w/テクスチャ#テクスチャアトラス)
 
-OpenGLではテクスチャを切り替える(Bind)処理は比較的重い処理です。
+OpenGLではテクスチャを切り替える（Bind）処理は、比較的コストの高い処理です。
 
 そのため、Minecraftでは大量のブロックやアイテムのテクスチャを**1枚の巨大な画像**にまとめて扱うことで、描画時の切り替えコストを削減しています。
 

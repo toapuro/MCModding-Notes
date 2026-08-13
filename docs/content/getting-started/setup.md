@@ -1,29 +1,29 @@
 # 環境構築
 
-Mod を開発するにはまずは開発環境の構築が必要です。
+Mod開発を始めるには、まず開発環境の構築が必要です。
 
-プラグインや開発サポートが豊富なため、ここでは開発ツール(IDE)は Intellij を使用します。
+プラグインや開発サポートが豊富なため、ここでは開発ツール（IDE）として IntelliJ を使用します。
 
-## Intellijのセットアップ
+## IntelliJ のセットアップ
 
-1. **Intellij IDEAのインストール**
+1. **IntelliJ IDEAのインストール**
     
     [公式ダウンロードページ](https://www.jetbrains.com/ja-jp/idea/download/?section=windows)
 
 2. **日本語化 (任意)**
     
-    Intellijを起動してランチャーメニューが表示されたら、サイドバーのPluginsタブから {==Japanese Language Pack==} と検索してインストールします。
-    インストール後に Intellij を再起動すれば日本語化が反映されます。
+    IntelliJを起動してランチャーメニューが表示されたら、サイドバーのPluginsタブから {==Japanese Language Pack==} と検索してインストールします。
+    インストール後に IntelliJ を再起動すれば日本語化が反映されます。
     ![](../../assets/intellij/intellij-japanese-ext.png)
 
 3. **Minecraft Development プラグインをインストール**
 
-    同じくPluginsタブから {==Minecraft Development==} と検索してインストールし、完了したら一度 Intellij を再起動してください。
+    同じくPluginsタブから {==Minecraft Development==} と検索してインストールし、完了したら一度 IntelliJ を再起動してください。
 
 
 ## 前提知識
 
-スキップしても大丈夫ですが、迷ったときに軽く振り返ると理解しやすくなります
+スキップしても問題ありませんが、迷ったときに見返すと理解しやすくなります。
 
 | 用語 | 備考 |
 | --- | --- |
@@ -41,15 +41,15 @@ Mod を開発するにはまずは開発環境の構築が必要です。
 | NeoForge | 1.20.4 以降はこちら。1.20.4 以降のバージョンを開発するほとんどの開発者が移行済み。 |
 | Forge | 1.20.4 未満ならこちら |
 
-1.20.1は特別にNeoForgeとForgeどちらも対応しています
+1.20.1は特別にNeoForgeとForgeのどちらにも対応しています。
 
 ## Mod開発環境のセットアップ
 
-いくつか方法があります
+方法はいくつかあります。
 
-NeoForgeであれば [1, (NeoForge) Mod ジェネレータの利用](#1-neoforge-mod-ジェネレータの利用) を推奨
+NeoForgeであれば [1, (NeoForge) Mod ジェネレータの利用](#1-neoforge-mod-ジェネレータの利用) を推奨します。
 
-Forgeであれば [4, (NeoForge/Forge) Intellijプラグイン経由で生成](#4-neoforgeforgefabric-intellijプラグイン経由で生成) を推奨
+Forgeであれば [4, (NeoForge/Forge) IntelliJプラグイン経由で生成](#4-neoforgeforgefabric-intellijプラグイン経由で生成) を推奨します。
 
 ### 1, (NeoForge) Mod ジェネレータの利用
 
@@ -77,16 +77,16 @@ NeoForge (1.20.4 以降)
 
 [^1]: MDKはMod Developer Kitの略で、いわゆるテンプレートです。
 
-### 4, (NeoForge/Forge) Intellijプラグイン経由で生成
+### 4, (NeoForge/Forge) IntelliJプラグイン経由で生成
 
 プロジェクトを新規作成するとき左下にあるジェネレータから Minecraft を選択し、各項目を入力して作成を押してください。
 
 !!! note
-    JDKの指定が必要な場合は [Java JDK(Intellij IDE)](#java-jdkintellij-ide) を参考にしてみてください。
+    JDKの指定が必要な場合は [Java JDK(IntelliJ IDE)](#java-jdkintellij-ide) を参考にしてみてください。
 
-## Java JDK(Intellij IDE)
+## Java JDK(IntelliJ IDE)
 
-JDK は Java を実行するためのキットのようなもの、と理解してもらえばOKです。
+JDK は、Java を実行するための基盤一式だと捉えると分かりやすいです。
 
 以下のテーブルのように、マイクラバージョンごとに使用するJDKバージョンが異なり、基本的に開発環境も対応するJDKに合わせます。
 
@@ -101,7 +101,7 @@ JDK は Java を実行するためのキットのようなもの、と理解し�
 
 ### ダウンロード
 
-Intellij であれば、プロジェクトを開いた状態で左上の ≡ メニュー->ファイル->プロジェクト構成->プロジェクトと進み、SDK[^2]の指定を開き、{==JDKのダウンロード...==}を選択することでダウンロードできます。
+IntelliJ であれば、プロジェクトを開いた状態で左上の ≡ メニュー->ファイル->プロジェクト構成->プロジェクトと進み、SDK[^2]の指定を開き、{==JDKのダウンロード...==}を選択することでダウンロードできます。
 
 ![JDKのダウンロード](../../assets/intellij/jdk-download.png)
 
@@ -118,7 +118,7 @@ IDE外にも導入しておきたいのであれば以下のベンダーから�
 
 - [OpenJDK](https://jdk.java.net/25/)
 
-[^2]: JavaではJDKの事を指す
+[^2]: JavaではJDKのことを指す
 [^3]: Java関連のベースキット(JDK等)を提供する企業やサービス
 
 ## テンプレートの編集
@@ -142,7 +142,7 @@ mod_authors=toapuro, another_author // 作者一覧
 mod_description=An example mod // Modの説明
 ```
 
-分からない用語は [#前提知識](#前提知識) を参照してください
+分からない用語は [#前提知識](#前提知識) を参照してください。
 
 ## ビルド・実行の方法
 
@@ -150,7 +150,7 @@ mod_description=An example mod // Modの説明
 
 ![](../../assets/intellij/gradle.png)
 
-jarへビルドする場合は `Tasks->build->build`、
+jar にビルドする場合は `Tasks->build->build`、
 
 開発環境で実際に動作を確認したいのであれば `Tasks->forgegradle runs->runClient` を実行。
 

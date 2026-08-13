@@ -14,7 +14,7 @@
 
 ### builtin/entity
 
-`BuiltInModel` としてモデルが登録され、唯一 `IClientItemExtensions`の `getCustomRenderer` が適用されるモデルです。(`BakedModel#isCustomRenderer`が`true`)
+`BuiltInModel` としてモデルが登録され、唯一 `IClientItemExtensions` の `getCustomRenderer` が適用されるモデルです。（`BakedModel#isCustomRenderer` が `true`）
 
 その代わりに、モデルが一切描画されません。
 
@@ -38,7 +38,7 @@ Neoforgeですがネームスペース以外は仕様がほとんど同じです
 
 実行時にモデルを生成して、ロードさせたり、アイテムによってモデルを変更するといったことができます。
 
-以下２つの事が可能です。
+以下の2つが可能です。
 
 ### 1. モデル(Quad)を自動生成する
 
