@@ -13,20 +13,19 @@
 
 ### コミット
 
-コミットメッセージは独自に拡張されたConventional Commitsに従っており、以下の形式となります。
-`<type>: <subject>`
+コミットメッセージは独自に拡張された Conventional Commits に従っており、以下の形式となります。
+`<type>(<optional scope>): <subject>`
 
-主な `type` は以下の通りです。
-- `add`: ドキュメントの追加
-- `update`: ドキュメント内容の更新
-- `feat`: スクリプトや運用機能の追加・変更
-- `fix`: 不具合の修正
-- `ci`: CI 関連の変更
+`type` は以下の通りです。
+- `docs`: ドキュメントの変更
+- `refactor`: ファイルの整理等
+- `feat`: その他機能の追加
 - `chore`: 雑務的な変更
+- その他
 
 ## 編集方法
 
-1. `docs/` の中にMarkdownファイルを作成
+1. `docs/` の中に Markdown ファイルを作成
 2. `mkdocs.yml` の `nav` に追記
 3. `uv run mkdocs serve` を実行して、ローカルで確認
 
